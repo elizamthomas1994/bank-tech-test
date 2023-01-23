@@ -31,4 +31,16 @@ describe('Withdraw', () => {
       expect(error.message).toBe("Not enough funds in account!")
     }
   })
+
+  it ('throws an error if withdrawl amount is greater than balance', () => {
+    const withdraw = new Withdraw();
+    withdraw.balance = 5550;
+
+    try {
+      (withdraw.withdrawFunds(7500));
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("Not enough funds in account!")
+    }
+  })
 });
