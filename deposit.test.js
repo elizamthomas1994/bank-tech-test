@@ -5,7 +5,7 @@ describe('Deposit', () => {
     const deposit = new Deposit();
     deposit.balance = 0;
 
-    deposit.addDeposit(1000);
+    deposit.depositFunds(1000);
 
     expect(deposit.balance).toBe(1000);
   });
@@ -14,7 +14,7 @@ describe('Deposit', () => {
     const deposit = new Deposit();
     deposit.balance = 2255;
 
-    deposit.addDeposit(745);
+    deposit.depositFunds(745);
 
     expect(deposit.balance).toBe(3000);
   });
@@ -23,8 +23,8 @@ describe('Deposit', () => {
     const deposit = new Deposit();
     deposit.balance = 1000;
 
-    deposit.addDeposit(450);
-    deposit.addDeposit(550);
+    deposit.depositFunds(450);
+    deposit.depositFunds(550);
 
     expect(deposit.balance).toBe(2000);
   });

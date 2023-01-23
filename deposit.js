@@ -3,7 +3,7 @@ class Deposit {
     this.balance = balance;
   }
 
-  addDeposit(funds) {
+  depositFunds(funds) {
     return (this.balance += funds);
   }
 }
