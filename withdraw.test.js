@@ -20,7 +20,15 @@ describe('Withdraw', () => {
     expect(withdraw.balance).toBe(1000);
   });
 
-  // it ('throws an error if withdrawl amount is greater than balance', () => {
+  it ('throws an error if withdrawing from empty account', () => {
+    const withdraw = new Withdraw();
+    withdraw.balance = 0;
 
-  // })
+    try {
+      (withdraw.withdrawFunds(500));
+    } catch (error) {
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe("Not enough funds in account!")
+    }
+  })
 });

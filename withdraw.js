@@ -4,7 +4,11 @@ class Withdraw {
   }
 
   withdrawFunds(funds) {
-    return (this.balance -= funds);
+    if ((this.balance - funds) < 0) {
+      throw new Error("Not enough funds in account!")
+    } else {
+      return (this.balance -= funds);
+    }
   }
 }
 
