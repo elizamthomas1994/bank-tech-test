@@ -19,7 +19,13 @@ describe('Deposit', () => {
     expect(deposit.balance).toBe(3000);
   });
 
-  // it ('can be called multiple times in one go', () => {
-   
-  // });
+  it ('can be called multiple times in one go', () => {
+    const deposit = new Deposit();
+    deposit.balance = 1000;
+
+    deposit.addDeposit(450);
+    deposit.addDeposit(550);
+
+    expect(deposit.balance).toBe(2000);
+  });
 });
