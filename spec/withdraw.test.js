@@ -1,6 +1,15 @@
 const Withdraw = require('../lib/withdraw');
 
 describe('Withdraw', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('01/01/2023'));
+  })
+  
+  afterAll(() => {
+    jest.useRealTimers();
+  })
+
   it ('deducts funds from the bank balance', () => {
     const withdraw = new Withdraw(5000, 1000);
 
@@ -37,5 +46,13 @@ describe('Withdraw', () => {
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toBe("Not enough funds in account!")
     }
+  })
+
+  it ('tracks date that withdrawal was made', () => {
+    const withdraw = new Withdraw (100.00, 50.00);
+
+    withdraw.withdrawFunds();
+
+    expect(withdraw.date).toBe('01/01/2023');
   })
 });
