@@ -22,4 +22,13 @@ describe('Account', () => {
 
     expect(account.recordedTransactions).toEqual([{"balance": 4500.75, "creditedAmount": ' ', "date": '24/01/2023', "debitedAmount": 499.25}])
   });
+
+  it ('displays statement', () => {
+    const account = new Account(0.00);
+    account.deposit(100.00);
+    account.deposit(500.00);
+    account.withdraw(50.00);
+
+    expect(account.displayStatement()).toContain("Date || Credit || Debit || Balance\n")
+  })
 });
