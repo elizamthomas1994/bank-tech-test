@@ -12,4 +12,10 @@ describe('Statement', () => {
 
     expect(statement.display()).toContain("Date || Credit || Debit || Balance\n24/01/2023 || 500.25 ||   || 1750.25");
   })
+
+  it ('displays information about recorded withdrawal', () => {
+    const statement = new Statement([{"balance": 4500.75, "creditedAmount": ' ', "date": '24/01/2023', "debitedAmount": 499.25}])
+
+    expect(statement.display()).toContain("Date || Credit || Debit || Balance\n24/01/2023 ||   || 499.25 || 4500.75");
+  })
 });
