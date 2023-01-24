@@ -4,7 +4,12 @@ describe('Statement', () => {
   it ('displays only column information if no transaction data given', () => {
     const statement = new Statement([]);
 
-    expect(statement.display()).toBe("Date || Credit || Debit || Balance");
+    expect(statement.display()).toBe("Date || Credit || Debit || Balance\n");
   });
 
+  it ('displays information about recorded deposit', () => {
+    const statement = new Statement([{"balance": 1750.25, "creditedAmount": 500.25, "date": '24/01/2023', "debitedAmount": ' '}])
+
+    expect(statement.display()).toContain("Date || Credit || Debit || Balance\n24/01/2023 || 500.25 ||   || 1750.25");
+  })
 });
