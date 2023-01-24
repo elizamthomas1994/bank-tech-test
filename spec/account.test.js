@@ -1,6 +1,15 @@
 const Account = require('../lib/account');
 
 describe('Account', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('01/01/2023'));
+  })
+  
+  afterAll(() => {
+    jest.useRealTimers();
+  })
+
   it ('displays current account balance', () => {
     const account = new Account(0.00);
 
@@ -12,7 +21,7 @@ describe('Account', () => {
     
     account.deposit(500.25);
 
-    expect(account.recordedTransactions).toEqual([{"balance": 1750.25, "creditedAmount": 500.25, "date": '24/01/2023', "debitedAmount": ' '}])
+    expect(account.recordedTransactions).toEqual([{"balance": 1750.25, "creditedAmount": 500.25, "date": '01/01/2023', "debitedAmount": ' '}])
   });
 
   it ('records all account withdrawals', () => {
@@ -20,7 +29,7 @@ describe('Account', () => {
     
     account.withdraw(499.25);
 
-    expect(account.recordedTransactions).toEqual([{"balance": 4500.75, "creditedAmount": ' ', "date": '24/01/2023', "debitedAmount": 499.25}])
+    expect(account.recordedTransactions).toEqual([{"balance": 4500.75, "creditedAmount": ' ', "date": '01/01/2023', "debitedAmount": 499.25}])
   });
 
   it ('displays statement', () => {
