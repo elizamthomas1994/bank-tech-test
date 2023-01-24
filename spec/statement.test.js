@@ -1,7 +1,7 @@
 const Statement = require('../lib/statement');
 
 describe('Statement', () => {
-  xit ('displays header information', () => {
+  it ('displays only column information if no transaction data given', () => {
     const statement = new Statement([]);
 
     expect(statement.display()).toBe("Date || Credit || Debit || Balance");
