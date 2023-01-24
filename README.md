@@ -51,6 +51,10 @@ account.displayStatement();
 
 This will allow you to see a full record of every time you have called on the deposit and withdraw functions while running the app in the Node REPL.
 
+You can see an example of the app running in Node below:
+
+![working-bank-app](images/bank_app.png)
+
 ## Project Approach
 I decided to approach this project, by first mapping out what classes I would need, and how those classes would interact with each other.
 I did this using Excalidraw, and then I began to think about how the code would actually function; what functions each class would need, and how
@@ -71,12 +75,16 @@ Then, in the final phase of the project, I wrote out the statement class and the
 to be fairly challenging as it made me re-evaluate and re-write other areas of my code to ensure everything functioned well together.
 
 ## Code Structure
-Originally, I had planned for this project to have 3 classes. I knew I would need the withdraw and deposit classes right away, but I had assumed I
-would only need the statement class on top of those. But when it came to actually writing for the 3rd class, I had real difficulties getting the 
-code to function while trying to maintain the single responsibility principle.
+![inital-project-design](images/Initial_Design.png)
+As you can see above, originally, I had planned for this project to have 3 classes. 
+I knew I would need the withdraw and deposit classes right away, but I had assumed I would only need the statement class on top of those. 
+But when it came to actually writing for the 3rd class, I had real difficulties getting the code to function while trying to maintain the single responsibility principle.
 
+![updated-project-design](images/Updated_Design.png)
 After trying a few different ideas, I eventually landed on the idea of having 4 classes, which is what you can see in this version of the project.
+While I had initially planned for the user to mainly engage with the deposit, withdraw and statement classes seperately, with the account class
+working mostly behind the scenes (as you can see in the above design), I eventually decided that the account class would actually be the primary
+way the end user would interact with the app.
+
 I tried to ensure the deposit, withdraw and statement classes were as short as I could possibly write them; while the account class would be how the 
 end user would interact with the app through Node, and also how the classes would generally interact with each other.
-
-
