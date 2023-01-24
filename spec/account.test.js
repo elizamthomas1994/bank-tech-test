@@ -4,7 +4,7 @@ describe('Account', () => {
   it ('displays current account balance', () => {
     const account = new Account(0.00);
 
-    expect(account.accountBalance()).toBe(0.00);
+    expect(account.checkBalance()).toBe(0.00);
   });
 
   it ('records all account deposits', () => {
@@ -13,5 +13,13 @@ describe('Account', () => {
     account.deposit(500.25);
 
     expect(account.recordedTransactions).toEqual([['24/01/2023', 500.25, ' ', 1750.25]])
+  })
+
+  it ('records all account withdrawals', () => {
+    const account = new Account(5000.00);
+    
+    account.withdraw(499.25);
+
+    expect(account.recordedTransactions).toEqual([['24/01/2023', 499.25, ' ', 4500.75]])
   })
 });
