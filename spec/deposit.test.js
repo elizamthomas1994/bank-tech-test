@@ -1,4 +1,4 @@
-const Deposit = require('./Deposit');
+const Deposit = require('../lib/deposit');
 
 describe('Deposit', () => {
   it ('adds funds to empty bank balance', () => {

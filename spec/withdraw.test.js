@@ -1,4 +1,4 @@
-const Withdraw = require('./Withdraw');
+const Withdraw = require('../lib/withdraw');
 
 describe('Withdraw', () => {
   it ('deducts funds from the bank balance', () => {
