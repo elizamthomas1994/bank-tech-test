@@ -1,3 +1,5 @@
+const Statement = require('./Statement');
+
 class Withdraw {
   constructor(balance) {
     this.balance = balance;
@@ -17,9 +19,8 @@ class Withdraw {
       withdrawTracker.push(funds); // Stores amount debited to account
       withdrawTracker.push(this.balance); // Stores new balance of account
 
-      // push depositTracker sub-array to primary account array
-      console.log(withdrawTracker);
-      console.log("Successfully withdrawn funds!");
+      Statement.recordData(withdrawTracker);
+      console.log("Funds successfully withdrawn!")
     }
   }
 }

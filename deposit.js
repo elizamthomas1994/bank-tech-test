@@ -1,3 +1,5 @@
+const Statement = require('./Statement');
+
 class Deposit {
   constructor(balance) {
     this.balance = balance;
@@ -14,8 +16,7 @@ class Deposit {
     depositTracker.push(''); // Stores amount debited to account
     depositTracker.push(this.balance); // Stores new balance of account
 
-    // push depositTracker sub-array to primary account array
-    console.log(depositTracker);
+    Statement.recordData(depositTracker);
     console.log("Successfully deposited funds!");
   }
 }
