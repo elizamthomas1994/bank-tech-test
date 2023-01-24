@@ -16,6 +16,36 @@ Alternatively, if you'd like to test the coverage of this project, please run 'j
 Finally, please also be aware that this project uses ESLint, a tool that helps identify problematic code.
 If you'd like to run this, please run 'npx eslint lib/{file_name}.js' in the terminal.
 
+## Running the Bank App
+
+In order to run this app, start by running node in the terminal. You can do this by simply typing 'node' into the terminal directly.
+
+With node running, I would recommend requiring the Account class, as this is the simplest way to interact with all aspects of this app.
+
+You can do this by entering the following into the Node REPL:
+const Account = require('./lib/Account');
+
+Once you have required the Account class, you can create a new instance of this class by entering the following into the Node REPL:
+const account = new Account(0.00);
+
+The above line will initialize an account with an empty bank balance.
+
+You can then call on the deposit function to add more money, like so:
+account.deposit(1000.00);
+
+This would add £1000.00 to the account balance.
+
+You can also withdraw money by running the following:
+account.withdraw(75.00);
+
+This would withdraw £75.00 from the bank balance; although, please be aware, the app will throw an error if you attempt to withdraw more money
+than you have in your account balance, so be sure to run account.deposit before trying to withdraw anything.
+
+Finally, to view your account statement, run:
+account.displayStatement();
+
+This will allow you to see a full record of every time you have called on the deposit and withdraw functions while running the app in the Node REPL.
+
 ## Project Approach
 I decided to approach this project, by first mapping out what classes I would need, and how those classes would interact with each other.
 I did this using Excalidraw, and then I began to think about how the code would actually function; what functions each class would need, and how
