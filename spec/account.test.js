@@ -22,10 +22,4 @@ describe('Account', () => {
 
     expect(account.recordedTransactions).toEqual([{"balance": 4500.75, "creditedAmount": ' ', "date": '24/01/2023', "debitedAmount": 499.25}])
   });
-
-  xit ('outputs header if no transactions made', () => {
-    const account = new Account(0.00);
-
-    expect(account.displayStatement()).toBe("Date || Credit || Debit || Balance");
-  });
 });
