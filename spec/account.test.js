@@ -38,6 +38,6 @@ describe('Account', () => {
     account.deposit(500.00);
     account.withdraw(50.00);
 
-    expect(account.displayStatement()).toContain("Date || Credit || Debit || Balance\n")
+    expect(account.displayStatement()).toContain("date || credit || debit || balance\n")
   })
 });
