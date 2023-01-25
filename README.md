@@ -24,30 +24,30 @@ With node running, I would recommend requiring the Account class, as this is the
 
 You can do this by entering the following into the Node REPL:
 
-const Account = require('./lib/Account');
+    const Account = require('./lib/Account');
 
 Once you have required the Account class, you can create a new instance of this class by entering the following into the Node REPL:
 
-const account = new Account(0.00);
+    const account = new Account(0.00);
 
 The above line will initialize an account with an empty bank balance.
 
 You can then call on the deposit function to add more money, like so:
 
-account.deposit(1000.00);
+    account.deposit(1000.00);
 
 This would add £1000.00 to the account balance.
 
 You can also withdraw money by running the following:
 
-account.withdraw(75.00);
+    account.withdraw(75.00);
 
 This would withdraw £75.00 from the bank balance; although, please be aware, the app will throw an error if you attempt to withdraw more money
 than you have in your account balance, so be sure to run account.deposit before trying to withdraw anything.
 
 Finally, to view your account statement, run:
 
-account.displayStatement();
+    account.displayStatement();
 
 This will allow you to see a full record of every time you have called on the deposit and withdraw functions while running the app in the Node REPL.
 
